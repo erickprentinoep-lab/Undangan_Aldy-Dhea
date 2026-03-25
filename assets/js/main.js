@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     // ===== Countdown Timer =====
-    const weddingDate = new Date('2026-05-15T08:00:00+07:00').getTime();
+    const weddingDate = new Date('2026-04-10T08:00:00+07:00').getTime();
 
     function updateCountdown() {
         const now = Date.now();
@@ -188,11 +188,11 @@ document.addEventListener('DOMContentLoaded', () => {
             'BEGIN:VCALENDAR',
             'VERSION:2.0',
             'BEGIN:VEVENT',
-            'DTSTART:20250615T010000Z',
-            'DTEND:20250615T060000Z',
-            'SUMMARY:Pernikahan Resha & Rudi',
+            'DTSTART:20260410T010000Z',
+            'DTEND:20260411T090000Z',
+            'SUMMARY:Pernikahan Aldi & Dhea',
             'LOCATION:Villa Lagenta, Lembang, Bandung Barat',
-            'DESCRIPTION:Akad: 08.00 WIB | Resepsi: 11.00 WIB',
+            'DESCRIPTION:Akad Nikah: Jumat, 10 April 2026 | Resepsi: Sabtu, 11 April 2026',
             'END:VEVENT',
             'END:VCALENDAR',
         ].join('\n'));
