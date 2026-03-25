@@ -191,8 +191,8 @@ document.addEventListener('DOMContentLoaded', () => {
             'DTSTART:20260410T010000Z',
             'DTEND:20260411T090000Z',
             'SUMMARY:Pernikahan Aldi & Dhea',
-            'LOCATION:Villa Lagenta, Lembang, Bandung Barat',
-            'DESCRIPTION:Akad Nikah: Jumat, 10 April 2026 | Resepsi: Sabtu, 11 April 2026',
+            'LOCATION:Jl.obor 3 gg kenari 2',
+            'DESCRIPTION:Akad Nikah:Resepsi: Sabtu, 11 April 2026',
             'END:VEVENT',
             'END:VCALENDAR',
         ].join('\n'));
