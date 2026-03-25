@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>The Wedding of Resha & Rudi</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Playfair Display"', 'serif'],
+            sans: ['Montserrat', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-black text-white font-sans antialiased select-none">
+
+  <!-- Audio -->
+  <audio id="bg-music" loop preload="auto">
+    <source src="assets/img/kasihputih.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- ===================== COVER (Slide 1) ===================== -->
+  <div id="cover" class="fixed inset-0 z-50 flex flex-col overflow-hidden">
+    <!-- BG Image: use <img> for proper responsive cover on mobile -->
+    <img src="assets/img/img8.PNG" alt="cover" class="absolute inset-0 w-full h-full object-cover object-center">
+    <!-- Gradual overlay only at top for top text readability -->
+    <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-transparent"></div>
+
+    <!-- Top text -->
+    <div class="relative z-10 flex-1 flex flex-col items-center justify-start pt-24 px-6 text-center slide-in-top">
+      <p class="tracking-[0.3em] text-[10px] font-medium uppercase text-white drop-shadow-md">The Wedding Of</p>
+      <h1 class="mt-4 font-serif text-5xl tracking-wide leading-none text-white drop-shadow-lg">
+        Aldi<span class="text-white/80 px-2 font-light italic">&amp;</span>Dhea
+      </h1>
+      <p class="mt-5 text-[10px] tracking-[0.3em] uppercase text-white/90 drop-shadow-md">15 Juni 2026</p>
+    </div>
+
+    <!-- Bottom invite text + button -->
+    <div class="relative z-10 pb-36 px-6 text-center slide-in-bottom">
+      <p class="italic font-medium text-gray-800 text-xs">Yang terhormat,</p>
+      <h2 id="nama-tamu" class="mt-2 font-bold text-xl text-black">Bapak/Ibu/Saudara/i</h2>
+      <p class="mt-1.5 text-[10px] font-medium text-gray-700 leading-relaxed">Mohon maaf jika ada kesalahan<br>penulisan
+        nama dan gelar.</p>
+      <p class="mt-4 text-[11px] text-gray-800 font-medium leading-relaxed">Kami mengundang Anda untuk
+        menghadiri<br>pernikahan kami. Tap
+        tombol di bawah untuk membuka undangan.</p>
+      <button id="btn-open"
+        class="mt-6 w-full max-w-[240px] px-8 py-3.5 bg-white text-black font-semibold text-[13px] rounded-full shadow-lg border border-gray-200 hover:bg-gray-50 active:scale-95 transition-all">
+        Buka Undangan
+      </button>
+    </div>
+  </div>
+
+  <!-- ===================== MAIN PAGE ===================== -->
+  <main id="main-content" class="hidden fixed inset-0 overflow-y-scroll" style="-webkit-overflow-scrolling: touch;">
+
+    <!-- Floating Music Button -->
+    <button id="music-btn"
+      class="fixed bottom-6 right-5 z-50 w-11 h-11 bg-white/10 backdrop-blur border border-white/20 rounded-full flex items-center justify-center shadow-md">
+      <i id="music-icon" class="fas fa-music text-sm text-white"></i>
+    </button>
+
+    <!-- ========== Slide 1b: OPENING HERO (after cover) ========== -->
+    <section class="relative min-h-screen flex flex-col justify-end pb-20 px-8 text-center">
+      <!-- Full BG Photo: <img> for reliable mobile cover -->
+      <img src="assets/img/img4.jpg" alt="hero" class="absolute inset-0 w-full h-full object-cover object-center">
+      <!-- Gradient overlay: transparent top → dark bottom -->
+      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-black/30 to-black/85"></div>
+
+      <!-- Bottom Text -->
+      <div class="relative z-10 space-y-4 reveal-item opacity-0 translate-y-6 transition-all duration-1000 delay-100">
+        <p class="text-sm font-light text-gray-300 leading-relaxed">
+          Kami mengundang Anda untuk<br>menghadiri pernikahan
+        </p>
+        <h1 class="font-serif text-[52px] tracking-[0.08em] leading-none text-white">
+          Aldi<span class="inline-block mx-1 text-white/70 text-4xl align-middle">&amp;</span>Dhea
+        </h1>
+        <p class="text-[11px] tracking-[0.35em] uppercase text-gray-400 mt-2">MINGGU, 15 JUNI 2026</p>
+        <!-- Thin divider line -->
+        <div class="w-10 h-px bg-white/30 mx-auto mt-3"></div>
+      </div>
+    </section>
+
+    <!-- ========== Slide 2: QUOTE Al-Quran ========== -->
+    <section class="relative min-h-screen flex flex-col items-center justify-center px-6 text-center"
+      style="background: #0d0d0d;">
+      <div class="absolute inset-0 bg-cover bg-center opacity-30"
+        style="background-image: url('assets/img/img9.jpeg');">
+      </div>
+      <div class="relative z-10 reveal-item opacity-0 translate-y-6 transition-all duration-1000 space-y-6 px-2">
+        <div class="inline-block border border-white/20 px-5 py-1 rounded-full mb-2">
+          <p class="text-[10px] tracking-[0.3em] uppercase text-[#d4af37]">Q.S. AR-RUM [30] : 21</p>
+        </div>
+        <p class="font-serif italic text-white text-base leading-loose max-w-sm mx-auto">
+          "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu
+          sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan
+          sayang. Sungguh, pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang
+          berpikir."
+        </p>
+      </div>
+    </section>
+
+    <!-- ========== Slide 3: MEMPELAI PRIA ========== -->
+    <section class="relative min-h-screen flex flex-col justify-end pb-20 px-7" style="background-color: #0a0a0a;">
+      <div class="absolute inset-0 bg-cover bg-top" style="background-image: url('assets/img/img1.jpg');"></div>
+      <div class="absolute inset-x-0 bottom-0 h-[55%] bg-gradient-to-t from-black to-transparent"></div>
+      <div class="relative z-10 reveal-item opacity-0 -translate-x-4 transition-all duration-1000">
+        <p class="tracking-[0.25em] text-[10px] uppercase text-gray-400 mb-2">Mempelai Pria</p>
+        <h2 class="font-serif text-4xl leading-tight">Aldy</h2>
+        <div class="mt-4 border-l-2 border-white/30 pl-4">
+          <p class="text-[10px] uppercase tracking-widest text-[#d4af37] mb-1">Putra Kedua Dari</p>
+          <p class="text-sm text-gray-300 font-light leading-relaxed">Bapak xxxx<br>&amp; Ibu xxxx</p>
+        </div>
+        <a href="https://instagram.com/aldi" target="_blank"
+          class="mt-5 inline-flex items-center gap-2 border border-white/30 rounded-full px-5 py-2 text-sm text-white backdrop-blur-sm hover:bg-white hover:text-black transition-colors">
+          <i class="fab fa-instagram"></i>
+          <span>resha.rahmawati</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ========== Slide 4: MEMPELAI WANITA ========== -->
+    <section class="relative min-h-screen flex flex-col justify-end pb-20 px-7" style="background-color: #0a0a0a;">
+      <div class="absolute inset-0 bg-cover bg-top" style="background-image: url('assets/img/img2.jpg');"></div>
+      <div class="absolute inset-x-0 bottom-0 h-[55%] bg-gradient-to-t from-black to-transparent"></div>
+      <div class="relative z-10 text-right ml-auto reveal-item opacity-0 translate-x-4 transition-all duration-1000">
+        <p class="tracking-[0.25em] text-[10px] uppercase text-gray-400 mb-2">Mempelai Wanita</p>
+        <h2 class="font-serif text-4xl leading-tight text-right">Dhea</h2>
+        <div class="mt-4 border-r-2 border-white/30 pr-4 text-right">
+          <p class="text-[10px] uppercase tracking-widest text-[#d4af37] mb-1">Putri Keempat Dari</p>
+          <p class="text-sm text-gray-300 font-light leading-relaxed">Bapak xxxx<br>&amp; Ibu xxxx</p>
+        </div>
+        <div class="flex justify-end">
+          <a href="https://instagram.com/dhea" target="_blank"
+            class="mt-5 inline-flex items-center gap-2 border border-white/30 rounded-full px-5 py-2 text-sm text-white backdrop-blur-sm hover:bg-white hover:text-black transition-colors">
+            <i class="fab fa-instagram"></i>
+            <span>rudiihrtn</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== Slide 5: WAKTU & TEMPAT ========== -->
+    <section class="relative py-24 px-7 flex flex-col items-center text-center gap-16"
+      style="background-color: #080808;">
+      <div class="absolute inset-0 bg-cover bg-center opacity-20"
+        style="background-image: url('assets/img/img11.jpeg');">
+      </div>
+
+      <!-- Waktu -->
+      <div
+        class="relative z-10 reveal-item opacity-0 translate-y-6 transition-all duration-1000 space-y-5 w-full max-w-sm">
+        <p class="tracking-[0.3em] text-[10px] uppercase text-gray-400">Waktu</p>
+        <h2 class="font-serif text-5xl leading-tight tracking-wide">MINGGU,<br>15 JUNI 2026</h2>
+        <div class="space-y-1 text-sm font-light text-gray-300">
+          <p>Akad Nikah: <span class="text-white font-medium">08.00 WIB</span></p>
+          <p>Resepsi: <span class="text-white font-medium">11.00 WIB</span></p>
+        </div>
+        <a id="add-to-calendar" href="#"
+          class="inline-block border border-white/30 rounded-full px-8 py-3 text-sm hover:bg-white hover:text-black transition-colors backdrop-blur-sm w-full max-w-[220px]">
+          Add to Calendar
+        </a>
+      </div>
+
+      <div class="h-px w-16 bg-white/20"></div>
+
+      <!-- Hitung Mundur -->
+      <div
+        class="relative z-10 reveal-item opacity-0 translate-y-6 transition-all duration-1000 space-y-4 w-full max-w-sm">
+        <p class="tracking-[0.3em] text-[10px] uppercase text-gray-400">Menuju Hari Spesial</p>
+        <div class="grid grid-cols-4 gap-3">
+          <div class="flex flex-col items-center bg-white/5 border border-white/10 rounded-2xl py-4 px-1">
+            <span id="cd-days" class="font-serif text-3xl text-white">00</span>
+            <span class="text-[9px] uppercase tracking-widest text-gray-500 mt-1">Hari</span>
+          </div>
+          <div class="flex flex-col items-center bg-white/5 border border-white/10 rounded-2xl py-4 px-1">
+            <span id="cd-hours" class="font-serif text-3xl text-white">00</span>
+            <span class="text-[9px] uppercase tracking-widest text-gray-500 mt-1">Jam</span>
+          </div>
+          <div class="flex flex-col items-center bg-white/5 border border-white/10 rounded-2xl py-4 px-1">
+            <span id="cd-mins" class="font-serif text-3xl text-white">00</span>
+            <span class="text-[9px] uppercase tracking-widest text-gray-500 mt-1">Menit</span>
+          </div>
+          <div class="flex flex-col items-center bg-white/5 border border-white/10 rounded-2xl py-4 px-1">
+            <span id="cd-secs" class="font-serif text-3xl text-white">00</span>
+            <span class="text-[9px] uppercase tracking-widest text-gray-500 mt-1">Detik</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="h-px w-16 bg-white/20"></div>
+
+      <!-- Tempat -->
+      <div
+        class="relative z-10 reveal-item opacity-0 translate-y-6 transition-all duration-1000 space-y-5 w-full max-w-sm">
+        <p class="tracking-[0.3em] text-[10px] uppercase text-gray-400">Tempat</p>
+        <h2 class="font-serif text-4xl leading-tight tracking-wide">VILLA LAGENTA</h2>
+        <p class="text-sm font-light text-gray-400 leading-relaxed">
+          Jl. Kolonel Masturi No.8, Gudangkahuripan,<br>Kec. Lembang, Kab. Bandung Barat, Jawa Barat
+        </p>
+        <a href="https://maps.app.goo.gl/xyz" target="_blank"
+          class="inline-block border border-white/30 rounded-full px-8 py-3 text-sm hover:bg-white hover:text-black transition-colors backdrop-blur-sm w-full max-w-[220px]">
+          Link Google Maps
+        </a>
+        <!-- Maps Embed -->
+        <div class="rounded-2xl overflow-hidden border border-white/10 h-52 mt-2 shadow-xl">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.3070!2d107.6113!3d-6.8176!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68fc3322aaec7f%3A0x6bfa09939afae761!2sVilla%20Lagenta!5e0!3m2!1sen!2sid!4v1700000000000!5m2!1sen!2sid"
+            width="100%" height="100%" style="border:0; filter: grayscale(80%) invert(1);" allowfullscreen=""
+            loading="lazy">
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== Slide 5b: GALLERY ========== -->
+    <section class="relative py-20 px-7" style="background-color: #0a0a0a;">
+      <div
+        class="relative z-10 w-full max-w-sm mx-auto reveal-item opacity-0 translate-y-6 transition-all duration-1000">
+        <!-- Header -->
+        <div class="text-center space-y-2 mb-10">
+          <p class="tracking-[0.3em] text-[10px] uppercase text-gray-400">Our Moments</p>
+          <h2 class="font-serif text-4xl text-[#d4af37]">Galeri</h2>
+        </div>
+
+        <!-- Grid masonry-style -->
+        <div class="grid grid-cols-2 gap-3 pb-8">
+          <!-- Column 1 -->
+          <div class="space-y-3">
+            <div class="rounded-xl overflow-hidden shadow-lg border border-white/10 group">
+              <img src="assets/img/img1.jpg" alt="Gallery" class="w-full h-auto object-cover group-hover:scale-110 transition-transform duration-700">
+            </div>
+            <div class="rounded-xl overflow-hidden shadow-lg border border-white/10 group">
+              <img src="assets/img/img3.jpg" alt="Gallery" class="w-full h-auto object-cover group-hover:scale-110 transition-transform duration-700">
+            </div>
+            <div class="rounded-xl overflow-hidden shadow-lg border border-white/10 group">
+              <img src="assets/img/img5.jpg" alt="Gallery" class="w-full h-auto object-cover group-hover:scale-110 transition-transform duration-700">
+            </div>
+            <div class="rounded-xl overflow-hidden shadow-lg border border-white/10 group">
+              <img src="assets/img/img9.jpeg" alt="Gallery" class="w-full h-auto object-cover group-hover:scale-110 transition-transform duration-700">
+            </div>
+            <div class="rounded-xl overflow-hidden shadow-lg border border-white/10 group">
+              <img src="assets/img/img11.jpeg" alt="Gallery" class="w-full h-auto object-cover group-hover:scale-110 transition-transform duration-700">
+            </div>
+          </div>
+          <!-- Column 2 -->
+          <div class="space-y-3 pt-8"> <!-- Offset to create a masonry-like look -->
+            <div class="rounded-xl overflow-hidden shadow-lg border border-white/10 group">
+              <img src="assets/img/img2.jpg" alt="Gallery" class="w-full h-auto object-cover group-hover:scale-110 transition-transform duration-700">
+            </div>
+            <div class="rounded-xl overflow-hidden shadow-lg border border-white/10 group">
+              <img src="assets/img/img4.jpg" alt="Gallery" class="w-full h-auto object-cover group-hover:scale-110 transition-transform duration-700">
+            </div>
+             <div class="rounded-xl overflow-hidden shadow-lg border border-white/10 group">
+              <img src="assets/img/img8.PNG" alt="Gallery" class="w-full h-auto object-cover group-hover:scale-110 transition-transform duration-700">
+            </div>
+            <div class="rounded-xl overflow-hidden shadow-lg border border-white/10 group">
+              <img src="assets/img/img10.jpeg" alt="Gallery" class="w-full h-auto object-cover group-hover:scale-110 transition-transform duration-700">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== Slide 6: RSVP ========== -->
+    <section class="relative py-20 px-7" style="background-color: #0d0d0d;">
+      <div
+        class="relative z-10 w-full max-w-sm mx-auto reveal-item opacity-0 translate-y-6 transition-all duration-1000">
+        <div class="text-center space-y-2 mb-8">
+          <p class="tracking-[0.3em] text-[10px] uppercase text-gray-400">Konfirmasi Kehadiran</p>
+          <h2 class="font-serif text-4xl text-[#d4af37]">RSVP</h2>
+        </div>
+
+        <form id="rsvp-form" class="space-y-4">
+          <div>
+            <label class="block text-[10px] uppercase tracking-widest text-gray-500 mb-2">Nama Lengkap</label>
+            <input type="text" id="rsvp-name" required placeholder="Nama Anda"
+              class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-white/40 transition-colors">
+          </div>
+          <div>
+            <label class="block text-[10px] uppercase tracking-widest text-gray-500 mb-2">Kehadiran</label>
+            <select id="rsvp-status" required
+              class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-white/40 transition-colors">
+              <option value="" disabled selected class="text-black">Pilih Status</option>
+              <option value="Hadir" class="text-black">Hadir</option>
+              <option value="Tidak Hadir" class="text-black">Tidak Hadir</option>
+            </select>
+          </div>
+          <div id="pax-wrap">
+            <label class="block text-[10px] uppercase tracking-widest text-gray-500 mb-2">Jumlah Tamu</label>
+            <select id="rsvp-pax"
+              class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-white/40 transition-colors">
+              <option value="1" class="text-black">1 Orang</option>
+              <option value="2" class="text-black">2 Orang</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-[10px] uppercase tracking-widest text-gray-500 mb-2">Ucapan &amp; Doa</label>
+            <textarea id="rsvp-message" rows="4" placeholder="Tulis ucapan dan doa..."
+              class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-white/40 transition-colors resize-none"></textarea>
+          </div>
+          <button type="submit"
+            class="w-full bg-white text-black font-semibold py-4 rounded-xl flex items-center justify-center gap-2 hover:bg-gray-100 active:scale-95 transition-all mt-2">
+            <i class="fab fa-whatsapp text-green-500 text-lg"></i>
+            Kirim via WhatsApp
+          </button>
+        </form>
+
+        <!-- Wishes Board -->
+        <div id="wishes-board" class="mt-10 space-y-3 hidden">
+          <p class="text-center text-[10px] uppercase tracking-widest text-gray-500">Ucapan &amp; Doa</p>
+          <div id="wishes-list" class="space-y-3"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== Gift / Rekening Section ========== -->
+    <section class="relative py-20 px-7" style="background-color: #080808;">
+      <div class="relative z-10 w-full max-w-sm mx-auto space-y-8">
+
+        <!-- Header -->
+        <div class="text-center space-y-2">
+          <p class="tracking-[0.3em] text-[10px] uppercase text-gray-500">Amplop Digital</p>
+          <h2 class="font-serif text-4xl">Gift</h2>
+          <p class="text-xs text-gray-400 font-light leading-relaxed">
+            Doa dan kehadiran Anda adalah hadiah terbaik.<br>
+            Namun jika ingin memberikan hadiah, dapat melalui rekening berikut.
+          </p>
+        </div>
+
+        <!-- ATM Card 1 -->
+        <div class="relative rounded-2xl overflow-hidden p-6 shadow-2xl"
+          style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); border: 1px solid rgba(255,255,255,0.08);">
+          <!-- BG pattern -->
+          <div class="absolute inset-0 opacity-5"
+            style="background-image: repeating-linear-gradient(45deg, #fff 0, #fff 1px, transparent 0, transparent 50%); background-size: 20px 20px;">
+          </div>
+          <!-- Chip -->
+          <div class="relative z-10 flex items-start justify-between mb-6">
+            <div
+              class="w-10 h-7 rounded-md bg-gradient-to-br from-yellow-300 to-yellow-500 flex items-center justify-center opacity-80">
+              <div class="w-6 h-4 rounded-sm border border-yellow-600/50 grid grid-cols-2 gap-px p-0.5">
+                <div class="bg-yellow-600/50 rounded-sm"></div>
+                <div class="bg-yellow-600/50 rounded-sm"></div>
+                <div class="bg-yellow-600/50 rounded-sm"></div>
+                <div class="bg-yellow-600/50 rounded-sm"></div>
+              </div>
+            </div>
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/905px-Amazon_logo.svg.png"
+              class="h-5 opacity-0" alt=""><!-- placeholder, ganti logo bank -->
+            <span class="text-[10px] tracking-widest text-white/40 uppercase font-light">Bank BCA</span>
+          </div>
+          <!-- Nomor Rekening -->
+          <div class="relative z-10 space-y-1 mb-6">
+            <p class="text-[10px] text-white/30 tracking-widest uppercase">Nomor Rekening</p>
+            <div class="flex items-center gap-3">
+              <p id="rek1" class="text-xl tracking-[0.15em] font-mono text-white">1234 5678 9012</p>
+              <button onclick="copyRek('rek1', this)"
+                class="text-[10px] border border-white/20 rounded-full px-3 py-1 text-white/50 hover:bg-white/10 transition-colors shrink-0">
+                Salin
+              </button>
+            </div>
+          </div>
+          <!-- Nama -->
+          <div class="relative z-10">
+            <p class="text-[10px] text-white/30 tracking-widest uppercase mb-1">Atas Nama</p>
+            <p class="text-sm font-medium text-white tracking-wider">ALDY PRATAMA</p>
+          </div>
+        </div>
+
+        <!-- ATM Card 2 -->
+        <div class="relative rounded-2xl overflow-hidden p-6 shadow-2xl"
+          style="background: linear-gradient(135deg, #1a0a2e 0%, #2d1b4e 50%, #4a1a6e 100%); border: 1px solid rgba(255,255,255,0.08);">
+          <!-- BG pattern -->
+          <div class="absolute inset-0 opacity-5"
+            style="background-image: repeating-linear-gradient(-45deg, #fff 0, #fff 1px, transparent 0, transparent 50%); background-size: 20px 20px;">
+          </div>
+          <!-- Chip -->
+          <div class="relative z-10 flex items-start justify-between mb-6">
+            <div
+              class="w-10 h-7 rounded-md bg-gradient-to-br from-yellow-300 to-yellow-500 flex items-center justify-center opacity-80">
+              <div class="w-6 h-4 rounded-sm border border-yellow-600/50 grid grid-cols-2 gap-px p-0.5">
+                <div class="bg-yellow-600/50 rounded-sm"></div>
+                <div class="bg-yellow-600/50 rounded-sm"></div>
+                <div class="bg-yellow-600/50 rounded-sm"></div>
+                <div class="bg-yellow-600/50 rounded-sm"></div>
+              </div>
+            </div>
+            <span class="text-[10px] tracking-widest text-white/40 uppercase font-light">Bank BRI</span>
+          </div>
+          <!-- Nomor Rekening -->
+          <div class="relative z-10 space-y-1 mb-6">
+            <p class="text-[10px] text-white/30 tracking-widest uppercase">Nomor Rekening</p>
+            <div class="flex items-center gap-3">
+              <p id="rek2" class="text-xl tracking-[0.15em] font-mono text-white">0987 6543 2100</p>
+              <button onclick="copyRek('rek2', this)"
+                class="text-[10px] border border-white/20 rounded-full px-3 py-1 text-white/50 hover:bg-white/10 transition-colors shrink-0">
+                Salin
+              </button>
+            </div>
+          </div>
+          <!-- Nama -->
+          <div class="relative z-10">
+            <p class="text-[10px] text-white/30 tracking-widest uppercase mb-1">Atas Nama</p>
+            <p class="text-sm font-medium text-white tracking-wider">DHEA ANGGRAINI</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 text-center bg-black border-t border-white/5">
+      <p class="text-[10px] tracking-[0.3em] text-gray-600 uppercase">With love, aldy &amp; dhea · 15.06.2026</p>
+    </footer>
+  </main>
+
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

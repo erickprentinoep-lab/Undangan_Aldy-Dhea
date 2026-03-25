@@ -1,0 +1,69 @@
+/* ===== Base Reset ===== */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  overscroll-behavior: none;
+}
+
+/* ===== Hide scrollbar globally ===== */
+#main-content {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+#main-content::-webkit-scrollbar { display: none; }
+
+/* ===== Cover Slide In Animations ===== */
+.slide-in-top {
+  animation: slideInTop 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.slide-in-bottom {
+  animation: slideInBottom 1s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+}
+
+@keyframes slideInTop {
+  from { opacity: 0; transform: translateY(-30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideInBottom {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Cover Exit ===== */
+#cover.closing {
+  animation: coverExit 1.2s cubic-bezier(0.65, 0, 0.15, 1) forwards;
+}
+@keyframes coverExit {
+  0%   { transform: translateY(0) scale(1); opacity: 1; }
+  100% { transform: translateY(-15vh) scale(1.05); opacity: 0; }
+}
+
+/* ===== Scroll Reveal ===== */
+.reveal-item {
+  will-change: opacity, transform;
+}
+.reveal-active {
+  opacity: 1 !important;
+  transform: translate(0, 0) !important;
+}
+
+/* ===== Music Button ===== */
+#music-btn.playing i {
+  animation: spin 3s linear infinite;
+}
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* ===== Ensure sections fill full screen on mobile ===== */
+section {
+  width: 100%;
+}
+
+/* ===== Select option colors ===== */
+select option {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
