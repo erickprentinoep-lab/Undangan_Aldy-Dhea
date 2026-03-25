@@ -439,6 +439,28 @@
   </main>
 
   <script src="assets/js/main.js"></script>
-</body>
 
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="fixed inset-0 z-[100] bg-black/95 hidden flex-col items-center justify-center opacity-0 transition-opacity duration-300">
+    <!-- Top Bar -->
+    <div class="absolute top-0 inset-x-0 p-4 flex justify-between items-center z-10 bg-gradient-to-b from-black/80 to-transparent">
+      <span id="lb-counter" class="text-white text-sm font-light tracking-widest pl-2">1 / 9</span>
+      <button id="lb-close" class="text-white p-2 hover:bg-white/10 rounded-full transition-colors">
+        <i class="fas fa-times text-xl"></i>
+      </button>
+    </div>
+    <!-- Main Content -->
+    <div class="relative w-full h-full flex items-center justify-center overflow-hidden touch-pan-y" id="lb-container">
+      <img id="lb-img" src="" class="max-w-full max-h-[85vh] object-contain transition-transform duration-300 pointer-events-none select-none">
+    </div>
+    <!-- Controls (Help text for mobile / Desktop buttons) -->
+    <button id="lb-prev" class="absolute left-2 top-1/2 -translate-y-1/2 text-white/50 hover:text-white p-4 hidden md:block">
+      <i class="fas fa-chevron-left text-2xl"></i>
+    </button>
+    <button id="lb-next" class="absolute right-2 top-1/2 -translate-y-1/2 text-white/50 hover:text-white p-4 hidden md:block">
+      <i class="fas fa-chevron-right text-2xl"></i>
+    </button>
+    <p class="absolute bottom-6 text-white/40 text-[10px] tracking-widest uppercase md:hidden">Geser untuk melihat gambar lain</p>
+  </div>
+</body>
 </html>
