@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     // ===== Countdown Timer =====
-    const weddingDate = new Date('2026-04-10T08:00:00+07:00').getTime();
+    const weddingDate = new Date('2026-04-11T10:00:00+07:00').getTime();
 
     function updateCountdown() {
         const now = Date.now();
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
         btnOpen.addEventListener('click', () => {
             // Animate button shrink & fade
             btnOpen.classList.add('scale-75', 'opacity-0', 'pointer-events-none', 'duration-500');
-            
+
             // Animate text out
             const topText = document.querySelector('.slide-in-top');
             const bottomText = document.querySelector('.slide-in-bottom');
@@ -152,7 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
             wishesList.prepend(card);
 
             // --- Format pesan WhatsApp ---
-            const phone = '6285223030232'; // ⚠️ Ganti dengan nomor WA tujuan
+            const phone = '089513613749'; // ⚠️ Ganti dengan nomor WA tujuan
 
             const lines = [
                 `🎊 *Konfirmasi Kehadiran*`,
@@ -294,12 +294,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
             container.addEventListener('touchstart', e => {
                 startX = e.changedTouches[0].screenX;
-            }, {passive: true});
+            }, { passive: true });
 
             container.addEventListener('touchend', e => {
                 endX = e.changedTouches[0].screenX;
                 handleSwipe();
-            }, {passive: true});
+            }, { passive: true });
 
             function handleSwipe() {
                 const threshold = 50;
