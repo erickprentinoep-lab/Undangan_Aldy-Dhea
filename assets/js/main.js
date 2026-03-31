@@ -50,12 +50,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let isPlaying = false;
 
-    // ===== Read ?tamu= param =====
+    // ===== Read ?to= or ?tamu= param =====
     const params = new URLSearchParams(window.location.search);
-    const tamu = params.get('tamu');
-    if (tamu) {
-        const el = document.getElementById('nama-tamu');
-        if (el) el.textContent = decodeURIComponent(tamu);
+    const guestName = params.get('to') || params.get('tamu');
+    if (guestName) {
+        const decodedName = decodeURIComponent(guestName);
+        const nameEl = document.getElementById('nama-tamu');
+        const rsvpNameEl = document.getElementById('rsvp-name');
+        
+        if (nameEl) nameEl.textContent = decodedName;
+        // Pre-fill the RSVP name input
+        if (rsvpNameEl) rsvpNameEl.value = decodedName;
     }
 
     // ===== Open Invitation =====
